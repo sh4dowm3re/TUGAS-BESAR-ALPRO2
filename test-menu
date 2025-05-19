@@ -1,0 +1,119 @@
+package main
+
+import "fmt"
+
+const nMax int = 1234
+
+type detailSampah struct {
+	namaSampah   string
+	jumlahSampah int
+}
+
+type jenisSampah struct {
+	namaJenis string
+	nSampah   int
+	info      [nMax]detailSampah
+}
+
+func main() {
+	var sampah [nMax]jenisSampah
+	var menu int
+	var nJenis int
+
+	for {
+		home()
+		fmt.Scan(&menu)
+		switch menu {
+		case 1:
+			readData(&sampah, &nJenis)
+		case 2:
+			editData(&sampah, nJenis)
+		case 3:
+			deleteData(&sampah, &nJenis)
+		case 4:
+			searchMenu(sampah, nJenis)
+		case 5:
+			writeData(sampah, nJenis)
+		case 6:
+			addRecycleData()
+		case 7:
+			showStatistics(sampah, nJenis)
+		case 8:
+			sortMenu(&sampah, nJenis)
+		case 9:
+			fmt.Println("Terima kasih telah menggunakan aplikasi ini.")
+			return
+		default:
+			fmt.Println("Pilihan tidak valid, coba lagi.")
+		}
+	}
+}
+
+func home() {
+	fmt.Println()
+	fmt.Println("=== Aplikasi Pengelolaan Data Sampah dan Daur Ulang ===")
+	fmt.Println("--------------------------------------------------------")
+	fmt.Println("1. Tambah Data Sampah")
+	fmt.Println("2. Ubah Data Sampah")
+	fmt.Println("3. Hapus Data Sampah")
+	fmt.Println("4. Cari Data Sampah")
+	fmt.Println("5. Tampilkan Data Sampah")
+	fmt.Println("6. Tambah Data Daur Ulang")
+	fmt.Println("7. Lihat Statistik Pengelolaan")
+	fmt.Println("8. Urutkan Data Sampah")
+	fmt.Println("9. Keluar")
+	fmt.Println("--------------------------------------------------------")
+	fmt.Print("Pilih menu (1-9): ")
+}
+
+func readData(s *[nMax]jenisSampah, nJenis *int) {
+	fmt.Print("Banyak jenis sampah yang ingin ditambahkan: ")
+	fmt.Scan(nJenis)
+	for i := 0; i < *nJenis; i++ {
+		fmt.Print("Masukkan nama jenis sampah: ")
+		fmt.Scan(&s[i].namaJenis)
+		fmt.Print("Banyak data sampah pada jenis ini: ")
+		fmt.Scan(&s[i].nSampah)
+		for j := 0; j < s[i].nSampah; j++ {
+			fmt.Print("  Masukkan nama sampah: ")
+			fmt.Scan(&s[i].info[j].namaSampah)
+			fmt.Print("  Masukkan jumlah sampah: ")
+			fmt.Scan(&s[i].info[j].jumlahSampah)
+		}
+		fmt.Println()
+	}
+}
+
+func writeData(s [nMax]jenisSampah, nJenis int) {
+	for i := 0; i < nJenis; i++ {
+		fmt.Printf("\n%s\n-----------------------------------------------\n", s[i].namaJenis)
+		for j := 0; j < s[i].nSampah; j++ {
+			fmt.Printf("   %-10s : %d \n", s[i].info[j].namaSampah, s[i].info[j].jumlahSampah)
+		}
+	}
+}
+
+// Fungsi tambahan akan diisi di bawah ini:
+func editData(s *[nMax]jenisSampah, nJenis int) {
+	fmt.Println("[Fungsi editData belum diimplementasikan]")
+}
+
+func deleteData(s *[nMax]jenisSampah, nJenis *int) {
+	fmt.Println("[Fungsi deleteData belum diimplementasikan]")
+}
+
+func searchMenu(s [nMax]jenisSampah, nJenis int) {
+	fmt.Println("[Fungsi searchMenu belum diimplementasikan]")
+}
+
+func addRecycleData() {
+	fmt.Println("[Fungsi addRecycleData belum diimplementasikan]")
+}
+
+func showStatistics(s [nMax]jenisSampah, nJenis int) {
+	fmt.Println("[Fungsi showStatistics belum diimplementasikan]")
+}
+
+func sortMenu(s *[nMax]jenisSampah, nJenis int) {
+	fmt.Println("[Fungsi sortMenu belum diimplementasikan]")
+}
