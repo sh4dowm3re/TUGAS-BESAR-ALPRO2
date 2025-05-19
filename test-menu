@@ -70,8 +70,25 @@ func readData(s *[nMax]jenisSampah, nJenis *int) {
 	fmt.Print("Banyak jenis sampah yang ingin ditambahkan: ")
 	fmt.Scan(nJenis)
 	for i := 0; i < *nJenis; i++ {
-		fmt.Print("Masukkan nama jenis sampah: ")
-		fmt.Scan(&s[i].namaJenis)
+		fmt.Println("Pilih jenis sampah:")
+		fmt.Println("1. Organik")
+		fmt.Println("2. Non_Organik")
+		fmt.Println("3. B3")
+		fmt.Print("Masukkan pilihan (1-3): ")
+		var pilihan int
+		fmt.Scan(&pilihan)
+		switch pilihan {
+		case 1:
+			s[i].namaJenis = "Organik"
+		case 2:
+			s[i].namaJenis = "Non_Organik"
+		case 3:
+			s[i].namaJenis = "B3"
+		default:
+			fmt.Println("Pilihan tidak valid, diatur ke 'Lainnya'")
+			s[i].namaJenis = "Lainnya"
+		}
+
 		fmt.Print("Banyak data sampah pada jenis ini: ")
 		fmt.Scan(&s[i].nSampah)
 		for j := 0; j < s[i].nSampah; j++ {
@@ -117,3 +134,5 @@ func showStatistics(s [nMax]jenisSampah, nJenis int) {
 func sortMenu(s *[nMax]jenisSampah, nJenis int) {
 	fmt.Println("[Fungsi sortMenu belum diimplementasikan]")
 }
+/* test
+test */
