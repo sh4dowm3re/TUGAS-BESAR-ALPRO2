@@ -21,14 +21,14 @@ C.
 package main
 
 import "fmt"
-const nMax int = 1234
+const nMax int = 1234 //nilai nMax
 
-type detailSampah struct{
+type detailSampah struct{ //array detail sampah yang berisi nama dan jumlah sampah
 	namaSampah string
 	jumlahSampah int
 }
 
-type jenisSampah struct{
+type jenisSampah struct{ //array jenis sampah yang berisi nama jenis sampah dan juga detail sampah
 	namaJenis string
 	nSampah int
 	info [nMax]detailSampah
@@ -55,6 +55,7 @@ func main(){
 	}
 }
 
+//home screen
 func home(){
 	fmt.Println("")
 	fmt.Println("Alikasi Pengelolaan Data Sampah dan Daur Ulang")
@@ -69,6 +70,8 @@ func home(){
 	fmt.Println("")
 }
 
+//function membaca data
+// CATATATN : read data versi ini masih dalam tahap abu-abu, dimana akan di ganti seperti yang ada di prototype
 func readData(s *[nMax]jenisSampah, nJenis *int){
 
 	if
@@ -91,6 +94,7 @@ func readData(s *[nMax]jenisSampah, nJenis *int){
 	}
 }
 
+//function write data untuk mencetak data-sata yang sudah di input
 func writeData(s [nMax]jenisSampah, nJenis int){
 	for i:=0;i<nJenis;i++{
 		fmt.Printf("\n%s\n-----------------------------------------------\n", s[i].namaJenis)
