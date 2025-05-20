@@ -1,3 +1,23 @@
+/*
+Nomor Topik dan Judul Topik: Nomor 4 dan Aplikasi Pengelolaan Data Sampah dan Daur Ulang
+
+Deskripsi Problem yang diberikan: Aplikasi ini digunakan untuk mencatat data pengelolaan sampah dan
+daur ulang di suatu wilayah. Data utama yang digunakan adalah daftar
+jenis sampah, jumlah sampah yang dikumpulkan, dan data proses daur
+ulang. Pengguna aplikasi adalah petugas pengelolaan sampah atau
+masyarakat yang ingin mencatat kontribusi daur ulang mereka.
+
+Daftar Anggota Tim: KEVIN ALDRIK JONATHAN TADJONGGA, MUHAMMAD SHEVA WARDHANA
+
+Penjelasan :
+A.
+
+B.
+
+C.
+
+
+*/
 package main
 
 import "fmt"
